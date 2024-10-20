@@ -1,4 +1,5 @@
 #include<iostream>
+#include<String>
 using namespace std;
 
 typedef struct {
@@ -26,10 +27,39 @@ bool StackFull(SqStack S){
 }
 //压栈
 int Push(SqStack &S,int e){
-   
- 
+    if(StackEmpty(S)) {//判断栈是否满了
+    int* newbase=new int[S.stacksize+10];  //重新分配空间
+    if(!newbase) exit(-1);//分配失败
+    for(int i=0;i<S.stacksize;i++){
+        newbase[i]=S.base[i];
+        }//将原来的数据复制到新的空间
+        delete[] S.base;//释放原来的空间
+    S.base=newbase;//新的栈底指针
+    S.top=S.base+S.stacksize;//新的栈顶指针
+    S.stacksize+=10;//新的栈的大小
+    }else{
+        *S.top++=e;//栈顶指针指向的位置赋值为e
+    }   
+    return 1;
 }
-int main(){
 
+//出栈
+int Pop(SqStack &S,int &e){
+    if(StackEmpty(S)) return -1;//判断栈是否为空
+    else{
+        e=*--S.top;
+        delete S.top;
+    }//不为空则将栈顶元素赋值给e并释放栈顶元素
+    return 1;
+}
+
+
+int main(){
+    cout<<"请输入表达式";//读取运算表达式
+    String s;
+    cin.get(s,'\n');
+    //创建操作数栈和操作符栈
+    //遍历操作符栈 判断操作符的先后顺序 弹出操作数栈的两个元素进行运算 运算结果压栈 直到操作符栈为空
+    //最后输出操作数栈的栈顶元素
     return 0;
 }
