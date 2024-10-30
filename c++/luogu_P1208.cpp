@@ -22,18 +22,19 @@ int main(){
             }
         }
     }
-    int i=0;
     while(n>0){
-        if(n>=nr[i].number){
-        	n-=nr[i].number;
-        	allprice+=nr[i].number*nr[i].price;
-        	i++;
-		}
-		else {
-			allprice+=nr[i].number*nr[i].price;
-			i++;
-			n=0;
-		}
+        if(nr[0].number<n){
+            sum+=nr[0].number*nr[0].price;
+            n-=nr[0].number;
+            for(int i=0;i<n;i++){
+                nr[i]=nr[i+1];
+            }
+        }
+        else{
+            sum+=nr[0].price*n;
+            break;
+        }
+
     }
-    cout<<allprice;
+        cout<<sum;
 }
