@@ -60,7 +60,12 @@
       "stdlib.h": "c",
       "string.h": "c",
       "array": "cpp",
-      "functional": "cpp"
+      "functional": "cpp",
+      "cstdarg": "cpp",
+      "cwctype": "cpp",
+      "memory_resource": "cpp",
+      "numeric": "cpp",
+      "iomanip": "cpp"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "aiXcoder.showTrayIcon": true,
