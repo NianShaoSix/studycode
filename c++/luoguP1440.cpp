@@ -3,7 +3,7 @@ using namespace std;
 
 #define MAX 20000002
 int m,n;
-int a[MAX];
+long long a[MAX];
 int main() {
     cin >> n >> m;
     for(int i=1;i<=n;i++) {
