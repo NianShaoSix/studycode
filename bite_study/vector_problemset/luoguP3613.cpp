@@ -6,7 +6,7 @@ int n,q;
 
 
 int main() {
-    vector<int>vec[N];
+    vector<int>vec[N];//创建n个动态数组
     cin >> n >> q;
     while(q--){
         int x;
@@ -14,8 +14,8 @@ int main() {
         if(x==1){
             int a,b,c;
             cin >> a >> b >>c;
-            if(vec[a].size()<=b)
-            vec[a].resize(b+1);
+            if(vec[a].size()<=b)//数组大小未知
+            vec[a].resize(b+1);//不够就扩容
              
             vec[a][b]=c;
         }
@@ -28,3 +28,11 @@ int main() {
     }
     return 0;
 }
+ /*void moveZeroes(vector<int>& nums) {
+     for(int i=0,current=-1;i<nums.size();i++){
+        if(nums[i]!=0){
+            swap(nums[i],nums[++current]);
+        }
+     }
+     
+    }*/
