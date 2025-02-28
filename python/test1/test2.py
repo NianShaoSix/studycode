@@ -1,39 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -64,9 +28,3 @@ plt.legend()
 
 # 显示图形
 plt.show()
-
-
-
-
-
-
