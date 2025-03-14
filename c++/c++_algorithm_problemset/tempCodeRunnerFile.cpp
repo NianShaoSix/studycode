@@ -1,21 +1,14 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
-int Akm(int m,int n){
-    if(m==0){
-        return n + 1;
-    }
-    if (n==0&&m>0){
-        return Akm(m-1,1);
-    }
-    if(m>0&&n>0){
-    return Akm(m-1,Akm(m,n-1));
-}
-
+int x,n;
+double f(int x,int n){
+    if(x==1) return sqrt(1+x);
+    return sqrt(f(x,n-1));
 }
 int main(){
-    int m,n;
-    cin >> m >>n;
-    int r = Akm(m,n);
-    cout << r <<endl;
+    cin >> x >>n;
+    double res = f(x,n);
+    printf("%.2lf",res);
     return 0;
 }
