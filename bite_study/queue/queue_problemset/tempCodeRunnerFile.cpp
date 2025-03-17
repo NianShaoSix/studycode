@@ -1,33 +1,31 @@
 #include <iostream>
 #include <queue>
+#include <utility>
 using namespace std;
-const int N = 1010;
-int m,n;
-queue<int> q;
-bool flag[N];
-int main(){
-    int cnt  = 0;
-    cin >> m >> n;
-    while(n--){
-        int x = 0;
-        cin >> x;
-        if(!flag[x]){
-            if(q.size()<=n)
-           {
-            cnt++;
-            flag[x] = true;
-            q.push(x);
-           }
-           else{
-            int t = q.front();
-            flag[t] = false;
-            cnt++;
-            flag[x] = true;
-            q.push(x);
-           }
-        }
+typedef pair<int,int> PII;
+queue<PII> q;
 
+const int N = 1e5 + 10;
+int cnt[N];
+int kinds;
+int main(){
+    int n;
+    cin >> n;
+    while (n--){
+        int t,num;
+        cin >> t >> num;
+        for(int i  = 1;i <= num;i++){
+            int x;
+            cin >> x;
+            q.push({t,x});
+            if(cnt[x]++==0) kinds++;
+        }
+        if(q.size()&&q.back().first - q.front().first >= 86400){
+            int tem = q.front().second;
+            q.pop();
+            if(cnt[tem]--==1) kinds--;
+        }
+        cout << kinds<<endl;
     }
-    cout << cnt <<endl;
     return 0;
 }
