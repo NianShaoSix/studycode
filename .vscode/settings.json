@@ -1,5 +1,8 @@
 {
     "files.associations": {
+      "*.sqlbook": "sql",
+      "*.ndjson": "jsonl",
+      "*.dbclient-js": "javascript",
       "*.py": "python",
       "iostream": "cpp",
       "*.tcc": "cpp",
@@ -65,7 +68,8 @@
       "cwctype": "cpp",
       "memory_resource": "cpp",
       "numeric": "cpp",
-      "iomanip": "cpp"
+      "iomanip": "cpp",
+      "list": "cpp"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "aiXcoder.showTrayIcon": true,
