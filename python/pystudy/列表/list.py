@@ -20,8 +20,8 @@
 
 
 #列表学习
-list1 = ['lisi1','lisi2','lisi3','lisi4']
-list2 = ['lisi',14,'geade3']
+# list1 = ['lisi1','lisi2','lisi3','lisi4']
+# list2 = ['lisi',14,'geade3']
 # print(list1)
 # print(list2)
 # print(list1[2])
@@ -43,5 +43,6 @@ list2 = ['lisi',14,'geade3']
 # for i in list1:
 #     print(i,end=' ')
 
-
+list1 = []
+print(list1)
 
