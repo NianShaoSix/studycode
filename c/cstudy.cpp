@@ -11,7 +11,7 @@ int t[N]; // 备份 a 数组
 
 // 计算 x 的二进制表示中一共有多少个 1
 int calc(int x)
-{   
+{
     int cnt = 0;
     while(x)
     {
